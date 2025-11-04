@@ -13,7 +13,11 @@ serve .
 
 ## Deploying
 
-- **Netlify / Vercel**: drag-and-drop the folder or select the repo and choose a static site project (no build command required, publish directory is the repo root).
+- **Netlify**: drag-and-drop the folder or select the repo and choose a static site project (no build command required, publish directory is the repo root).
+- **Vercel**:
+  1. Install the CLI (`npm i -g vercel`) or connect the repo in the Vercel dashboard.
+  2. When prompted for build settings, set **Framework = Other**, **Build Command = none**, **Output Directory = ./**.
+  3. Deploy. The included `vercel.json` already rewrites clean URLs back to `index.html`.
 - **GitHub Pages**: enable Pages for the repository and select the main branch root as the source.
 - **Any static host / S3**: upload `index.html` (and any additional assets you add later) directly.
 
