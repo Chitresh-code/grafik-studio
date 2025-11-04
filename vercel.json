@@ -1,11 +1,9 @@
 {
-  "version": 3,
-  "routes": [
+  "version": 2,
+  "rewrites": [
     {
-      "src": "/[^.]+$",
-      "dest": "/index.html",
-      "status": 200
+      "source": "/",
+      "destination": "/index.html"
     }
-  ],
-  "framework": null
+  ]
 }
