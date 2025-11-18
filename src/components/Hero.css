@@ -33,8 +33,22 @@
   margin: 0 auto;
   padding: 0 32px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
+  gap: 24px;
+}
+
+.nav-main {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: start;
+}
+
+.desktop-nav-group {
+  display: flex;
+  align-items: start;
+  gap: 200px;
 }
 
 .logo-link img {
@@ -45,6 +59,10 @@
 .primary-nav {
   display: flex;
   gap: 32px;
+}
+
+.desktop-nav {
+  display: flex;
 }
 
 .nav-item {
@@ -94,6 +112,64 @@
   display: inline-flex;
 }
 
+.mobile-menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+.mobile-menu-toggle span {
+  width: 22px;
+  height: 2px;
+  background: #ffffff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mobile-menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-nav-panel {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateY(-10px);
+  position: relative;
+  z-index: 11;
+}
+
+.mobile-nav-panel.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 10;
+}
+
 .hero-body {
   position: relative;
   z-index: 1;
@@ -108,7 +184,7 @@
 
 .hero-left {
   flex: 1.1;
-  max-width: 640px;
+  max-width: 560px;
   color: #ffffff;
 }
 
@@ -159,9 +235,10 @@
   position: relative;
   padding-right: 60px;
   margin-right: -160px;
-  height: calc(100% + 200px);
-  margin-top: -40px;
+  height: calc(100% + 280px);
+  margin-top: -100px;
   padding-bottom: 40px;
+  z-index: 1;
 }
 
 .hero-column {
@@ -169,11 +246,10 @@
   height: 100%;
   overflow: hidden;
   position: relative;
-  border-radius: 32px;
   mask-image: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(0, 0, 0, 0.85) 12%,
+    rgba(0, 0, 0, 0.85) 40%,
     rgba(0, 0, 0, 0.85) 88%,
     transparent 100%
   );
@@ -196,15 +272,28 @@
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
 }
 
+@media (max-width: 1200px) {
+  .nav-container {
+    padding: 0 24px;
+  }
+
+  .hero-body {
+    padding: 0 24px;
+    gap: 40px;
+  }
+
+  .hero-columns {
+    margin-right: 0;
+    padding-right: 0;
+    height: calc(100% + 120px);
+    margin-top: -40px;
+  }
+}
+
 @media (max-width: 1024px) {
   .nav-container {
     flex-direction: column;
-    gap: 24px;
-  }
-
-  .primary-nav {
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 16px;
   }
 
   .hero-body {
@@ -222,6 +311,78 @@
   .hero-columns {
     margin-right: 0;
     padding-right: 0;
+    margin-top: 0;
+    height: auto;
+  }
+
+  .hero-column {
+    height: 420px;
+  }
+
+  .desktop-nav-group {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .mobile-nav-panel {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    flex-direction: column;
+    gap: 16px;
+    background: rgba(5, 21, 42, 0.96);
+    padding: 24px;
+    margin: 0 16px;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px);
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+  }
+
+  .mobile-nav-panel.is-open {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobile-nav-panel nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mobile-nav-overlay {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-columns {
+    display: none;
+  }
+
+  .hero-mobile-bg {
+    display: flex;
+  }
+
+  .hero-body {
+    padding: 0 20px;
+  }
+
+  .mobile-nav-panel {
+    margin: 0 16px;
   }
 }
 

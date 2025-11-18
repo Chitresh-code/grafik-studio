@@ -1,5 +1,6 @@
 .discount-section {
   padding: 40px 0 120px;
+  animation: fadeUp 0.9s ease both;
 }
 
 .discount-card {
@@ -12,6 +13,14 @@
   align-items: stretch;
   overflow: hidden;
   position: relative;
+  min-height: 320px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.discount-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
 }
 
 .discount-copy {
@@ -67,4 +76,36 @@
   height: 100%;
   border-radius: 0;
   object-fit: cover;
+}
+
+@media (max-width: 960px) {
+  .discount-card {
+    padding: 18px;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .discount-copy h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+
+  .discount-copy p {
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+  }
+
+  .discount-image {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .discount-card {
+    padding: 18px;
+  }
+
+  .discount-image {
+    display: none;
+  }
 }
