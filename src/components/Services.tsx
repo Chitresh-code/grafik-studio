@@ -1,6 +1,7 @@
 import serviceOne from '../assets/services-1.png'
 import serviceTwo from '../assets/services-2.png'
 import serviceThree from '../assets/services-3.png'
+import './Services.css'
 
 const services = [
   {

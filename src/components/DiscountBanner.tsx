@@ -1,4 +1,5 @@
 import discountImage from '../assets/discount-bg.png'
+import './DiscountBanner.css'
 
 export function DiscountBanner() {
   return (
