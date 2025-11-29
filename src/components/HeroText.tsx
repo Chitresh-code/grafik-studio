@@ -1,4 +1,8 @@
+import { useCalendly } from './CalendlyProvider'
+
 export function HeroText() {
+  const { openCalendly } = useCalendly()
+
   return (
     <div className="hero-left">
       <span className="eyebrow">Your</span>
@@ -22,7 +26,9 @@ export function HeroText() {
           impactful solutions
         </p>
       </div>
-      <button className="primary-button">Get Your Free Consultation</button>
+      <button className="primary-button" onClick={openCalendly}>
+        Get Your Free Consultation
+      </button>
     </div>
   )
 }

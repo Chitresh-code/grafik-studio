@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Linkedin, Dribbble, Instagram, Youtube, Twitter, Facebook, Mail, MapPin } from 'lucide-react'
 import './Footer.css'
 import footerImage from '../assets/footer-klaviyo.png'
+import { useCalendly } from './CalendlyProvider'
 
 const socialIcons = [
   { name: 'LinkedIn', icon: Linkedin },
@@ -26,6 +27,7 @@ const navSections = [
 ]
 
 export function Footer() {
+  const { openCalendly } = useCalendly()
   const [openSections, setOpenSections] = useState<Record<string, boolean>>(() =>
     navSections.reduce((acc, section) => ({ ...acc, [section.title]: true }), {})
   )
@@ -41,7 +43,9 @@ export function Footer() {
           <div className="footer-brand">
             <img src={footerImage} alt="Klaviyo Master Elite Badge" />
             <p>Learn how to get the most out of Klaviyo with the grafik studio team.</p>
-            <button className="primary-button light">Book a Call</button>
+            <button className="primary-button light" onClick={openCalendly}>
+              Book a Call
+            </button>
           </div>
           <div className="footer-links">
             {navSections.map(({ title, links }) => (

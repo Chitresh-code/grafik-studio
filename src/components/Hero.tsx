@@ -7,14 +7,7 @@ import heroOne from '../assets/hero-1.svg'
 import heroTwo from '../assets/hero-2.svg'
 import heroThree from '../assets/hero-3.svg'
 import heroFour from '../assets/hero-4.svg'
-
-const navLinks = [
-  { label: 'About Us' },
-  { label: 'Results', dropdown: true },
-  { label: 'Email Audit' },
-  { label: 'Services', dropdown: true },
-  { label: 'Resources', dropdown: true },
-]
+import { navLinks } from '../data/navLinks'
 
 const heroVisuals = [heroOne, heroTwo, heroThree, heroFour]
 

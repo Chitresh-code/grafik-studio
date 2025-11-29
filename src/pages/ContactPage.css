@@ -1,0 +1,83 @@
+.contact-page {
+  background: #020617;
+  color: #f8fafc;
+}
+
+.contact-hero {
+  padding: 0 0 4rem;
+  background: linear-gradient(135deg, #010414, #0f172a);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.contact-hero-content {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.contact-hero-copy {
+  max-width: 760px;
+}
+
+.contact-hero-copy h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.contact-hero-copy p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #cbd5f5;
+}
+
+.contact-details {
+  background: #f8fafc;
+  color: #0f172a;
+  padding: 4rem 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.contact-grid article {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.75rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+}
+
+.contact-grid h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+  color: #0f172a;
+}
+
+.contact-grid p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.contact-calendly {
+  padding: 4rem 0 5rem;
+  background: #020617;
+}
+
+.calendly-wrapper {
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 24px;
+  padding: 2rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 35px 90px rgba(2, 6, 23, 0.65);
+}
+
+.calendly-inline-widget {
+  width: 100%;
+  border-radius: 12px;
+}

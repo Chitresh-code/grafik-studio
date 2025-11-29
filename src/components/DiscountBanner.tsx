@@ -1,7 +1,10 @@
 import discountImage from '../assets/discount-bg.png'
 import './DiscountBanner.css'
+import { useCalendly } from './CalendlyProvider'
 
 export function DiscountBanner() {
+  const { openCalendly } = useCalendly()
+
   return (
     <section className="discount-section">
       <div className="section-shell">
@@ -14,7 +17,7 @@ export function DiscountBanner() {
               our Black Friday offer. Scale your campaigns with proven creative
               systems built to convert.
             </p>
-            <button className="primary-button outline">
+            <button className="primary-button outline" onClick={openCalendly}>
               Book a call <span aria-hidden="true">→</span>
             </button>
           </div>

@@ -2,6 +2,7 @@ import serviceOne from '../assets/services-1.png'
 import serviceTwo from '../assets/services-2.png'
 import serviceThree from '../assets/services-3.png'
 import './Services.css'
+import { useCalendly } from './CalendlyProvider'
 
 const services = [
   {
@@ -25,6 +26,8 @@ const services = [
 ]
 
 export function Services() {
+  const { openCalendly } = useCalendly()
+
   return (
     <section className="services-section">
       <div className="section-shell">
@@ -44,8 +47,8 @@ export function Services() {
               <div className="service-body">
                 <h3>{item.step}</h3>
                 <p>{item.copy}</p>
-                <button className="link-button">
-                  Learn More
+                <button className="link-button" onClick={openCalendly}>
+                  Book a Call
                   <span aria-hidden="true">→</span>
                 </button>
               </div>

@@ -1,0 +1,97 @@
+.about-section {
+  padding: 5rem 0;
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.about-heading {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.about-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.about-heading h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.about-heading p {
+  margin: 0;
+  color: #cbd5f5;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.about-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-bottom: 3rem;
+}
+
+.about-story {
+  background: rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 25px 80px rgba(2, 6, 23, 0.55);
+}
+
+.about-story h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.about-story p {
+  margin: 0 0 1.25rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+
+.about-values {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.about-value-card {
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.about-value-card h4 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.about-value-card p {
+  margin: 0;
+  color: #cbd5f5;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding: 3.5rem 0;
+  }
+
+  .about-story,
+  .about-value-card {
+    padding: 1.5rem;
+  }
+}
